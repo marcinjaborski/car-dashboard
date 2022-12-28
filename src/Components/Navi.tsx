@@ -1,5 +1,5 @@
 const Navi = () => {
-  return <>Navi</>;
+  return <img className="nav-image" src="map.png" alt="google maps" />;
 };
 
 export default Navi;
