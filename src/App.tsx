@@ -1,53 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
-import { Box, IconButton, Paper } from "@mui/material";
-import { VolumeUp, SkipNext } from "@mui/icons-material";
-import { Link, Route, Routes } from "react-router-dom";
-import Radio from "./Components/Radio";
-import Navi from "./Components/Navi";
-import CarSettings from "./Components/CarSettings";
-import NavigationIcon from "@mui/icons-material/Navigation";
-import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import Gauges from "./Components/Gauges";
+import Interface from "./Components/Interface";
+import { Fab } from "@mui/material";
+import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
 const App = () => {
+  const [showClocks, setShowClocks] = useState(true);
+
   return (
-    <Paper className="interface">
-      <Box className="buttons">
-        <div className="dial"></div>
-        <VolumeUp />
-      </Box>
-      <Paper className="display">
-        <Box sx={{ width: "100%" }}>
-          <Routes>
-            <Route path="/" element={<Navi />} />
-            <Route path="/radio" element={<Radio />} />
-            <Route path="/settings" element={<CarSettings />} />
-          </Routes>
-        </Box>
-        <Box className="nav">
-          <Link to="/">
-            <IconButton>
-              <NavigationIcon />
-            </IconButton>
-          </Link>
-          <Link to="/radio">
-            <IconButton>
-              <MusicNoteIcon />
-            </IconButton>
-          </Link>
-          <Link to="/settings">
-            <IconButton>
-              <DirectionsCarIcon />
-            </IconButton>
-          </Link>
-        </Box>
-      </Paper>
-      <Box className="buttons">
-        <div className="dial"></div>
-        <SkipNext />
-      </Box>
-    </Paper>
+    <>
+      <Fab
+        color="primary"
+        sx={{ position: "fixed", bottom: 50, right: 50 }}
+        onClick={() => setShowClocks(!showClocks)}
+      >
+        <CompareArrowsIcon />
+      </Fab>
+      {showClocks ? <Gauges /> : <Interface />}
+    </>
   );
 };
 
