@@ -107,6 +107,12 @@ const Gauges = () => {
           />
         </Box>
         <img src="lights.svg" alt="lights" width={40} className="lights-icon" />
+        <img
+          src="check-engine-icon-22.png"
+          alt="check engine"
+          width={40}
+          className="check-engine-icon"
+        />
       </Box>
       <Box
         sx={{

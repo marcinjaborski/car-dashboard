@@ -1,67 +1,34 @@
-import { Box, Button, Slider, Switch } from "@mui/material";
+import { Box, Divider, Slider } from "@mui/material";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
-import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
-import WarningIcon from "@mui/icons-material/Warning";
-import PersonIcon from "@mui/icons-material/Person";
-import CropDinIcon from "@mui/icons-material/CropDin";
 
 const CarSettings = () => {
   return (
-    <Box sx={{ width: "50%", margin: "auto" }}>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <PowerSettingsNewIcon />
-        </Button>
-        <Switch defaultChecked />
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      <Box className="big-button">
+        <img
+          src="windshield.png"
+          alt="windshield"
+          className="windshield-icon"
+        />
+        <Box className="inner-buttons">
+          <AcUnitIcon sx={{ fontSize: 80 }} />
+          <Divider />
+          <img
+            src="recirculation.png"
+            alt="recirculation"
+            className="recirculation-icon"
+          />
+        </Box>
       </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <WarningIcon />
-        </Button>
-        <Switch />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <AcUnitIcon />
-        </Button>
-        <Slider defaultValue={30} />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <PersonIcon />
-        </Button>
-        <Slider defaultValue={60} />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <CropDinIcon />
-        </Button>
-        <Switch />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <CropDinIcon />
-        </Button>
-        <Switch />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <CropDinIcon />
-        </Button>
-        <Switch defaultChecked />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <CropDinIcon />
-        </Button>
-        <Switch defaultChecked />
-      </Box>
-      <Box sx={{ display: "flex" }}>
-        <Button>
-          <CropDinIcon />
-        </Button>
-        <Switch />
-      </Box>
+      <Slider defaultValue={30} sx={{ color: "crimson", mt: 3 }} />
     </Box>
   );
 };
